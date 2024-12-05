@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="number" placeholder="Enter Your Units" id="unit">
+        <button onclick="calculate()">Calculate</button>
+    </div>
+    <script>
+       function calculate(){
+        var unit = document.getElementById("unit").value;
+       // var units = 33;
+
+        if(unit<=50){
+         var subTotal = unit*0.5;
+        }
+        else if(unit>50 && unit<=150){
+         var subTotal = 50*0.5+(unit-50)*0.75;
+        }
+        else if(unit>150 && unit<=250){
+         var subTotal = 50*0.5+100*0.75+(unit-150 )*1.20;
+        }
+        else if(unit>250){
+         var subTotal = 50*0.5+100*0.75+100*1.20+(unit-250)*1.50;
+        }
+        var vat = parseInt (subTotal*0.2);
+
+        var total = subTotal+vat
+
+        document.write("Subtotal = " + subTotal + "<br>")
+
+        document.write("Vat = " + vat + "<br>")
+
+        
+        document.write("Total = " + total)
+        }
+        
+    </script>
+</body>
+</html>
